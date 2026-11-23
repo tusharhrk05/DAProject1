@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#133c70">
+  <meta name="description" content="BahiPro — Your Digital Munim for managing retail sales, bills, stock, customers, and purchases.">
+  <title>BahiPro — Your Digital Munim</title>
+  <link rel="icon" type="image/jpeg" href="bahipro-logo.jpeg">
+  <link rel="preload" as="image" href="bahipro-logo.jpeg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#overview" aria-label="BahiPro home">
+        <span class="brand-mark"><img src="bahipro-logo.jpeg" alt=""></span>
+        <span class="brand-name">Bahi<span>Pro</span><small>YOUR DIGITAL MUNIM</small></span>
+      </a>
+
+      <div class="store-switcher">
+        <span class="store-avatar" data-store-avatar>SG</span>
+        <span class="store-name"><strong data-store-name>Sunrise General Store</strong><small data-store-location>Indiranagar, Bengaluru</small></span>
+        <span class="chevron">⌄</span>
+      </div>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span>Overview</button>
+        <button class="nav-item" data-page="billing"><span class="nav-icon">▤</span>Billing<span class="nav-badge" id="pending-nav">0</span></button>
+        <button class="nav-item" data-page="purchases"><span class="nav-icon">↙</span>Purchases</button>
+        <button class="nav-item" data-page="inventory"><span class="nav-icon">▦</span>Inventory</button>
+        <button class="nav-item" data-page="customers"><span class="nav-icon">♙</span>Customers</button>
+        <button class="nav-item" data-page="reports"><span class="nav-icon">⌁</span>Reports</button>
+        <button class="nav-item" data-page="settings" aria-label="Settings" title="Settings"><span class="nav-icon">⚙</span>Settings</button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="stock-tip">
+        <span class="tip-spark">✳</span>
+        <strong>Small steps, big growth.</strong>
+        <p>Keep your stock updated to make smarter restocking decisions.</p>
+        <button data-go="inventory">Review inventory <span>↗</span></button>
+      </div>
+      <button class="user-profile" data-action="open-profile" type="button" aria-label="Open your profile">
+        <span class="profile-pic" data-profile-avatar>AM</span>
+        <span><strong data-profile-name>Ananya Mehta</strong><small data-profile-role>Store owner</small></span>
+        <span class="more-button" aria-hidden="true">•••</span>
+      </button>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb"><span data-store-name>Sunrise General Store</span><i>/</i><strong id="crumb-label">Overview</strong></div>
+        <div class="topbar-actions">
+          <div class="global-search-wrap">
+            <label class="search-box"><span>⌕</span><input id="global-search" type="search" placeholder="Search bills, customers, products..." aria-label="Search bills, customers, products, and purchases" aria-controls="global-search-results" aria-expanded="false" autocomplete="off"><kbd>⌘ K</kbd></label>
+            <div class="global-search-results" id="global-search-results" role="listbox" aria-label="Search results" hidden></div>
+          </div>
+          <span class="save-indicator" id="save-status" role="status" aria-live="polite">Saved on this device</span>
+          <button class="icon-button help-button" type="button" data-open-help aria-label="Help" title="Help">?</button>
+          <button class="icon-button notification-button" type="button" data-open-notifications aria-label="Notifications" title="Notifications"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span id="notification-badge" hidden></span></button>
+          <button class="top-avatar" data-action="open-profile" data-profile-avatar type="button" aria-label="Open your profile">AM</button>
+        </div>
+      </header>
+
+      <div class="page-content" id="page-content"></div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close dialog">×</button>
+      <div id="modal-content"></div>
+    </section>
+  </div>
+  <div class="tour-overlay" id="guided-tour" hidden aria-hidden="true">
+    <div class="tour-shade" id="tour-shade-top"></div>
+    <div class="tour-shade" id="tour-shade-left"></div>
+    <div class="tour-shade" id="tour-shade-right"></div>
+    <div class="tour-shade" id="tour-shade-bottom"></div>
+    <div class="tour-outline" id="tour-outline" aria-hidden="true"></div>
+    <section class="tour-card centered" id="tour-card" role="dialog" aria-modal="true" aria-labelledby="tour-title" aria-live="polite">
+      <div class="tour-card-top"><span class="tour-brand-mark">✦</span><span id="tour-progress">Welcome</span><button type="button" class="tour-skip" data-tour-skip>Skip tour</button></div>
+      <h2 id="tour-title">Welcome to BahiPro</h2>
+      <p id="tour-description"></p>
+      <div class="tour-card-actions"><button type="button" class="btn" data-tour-back hidden>Back</button><button type="button" class="btn btn-primary" data-tour-next>Start tour</button></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script src="analytics/export.js"></script>
+  <script src="analytics/google-sheets.js"></script>
+</body>
+</html>
+
+
+
+
