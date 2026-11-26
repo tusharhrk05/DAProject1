@@ -111,7 +111,7 @@ def image_asset(filename: str):
 
 @app.get("/<path:filename>")
 def app_asset(filename: str):
-    if filename not in {"app.js", "styles.css", "bahipro-logo.jpeg"}:
+    if filename not in {"app.js", "sample-data.js", "styles.css", "bahipro-logo.jpeg"}:
         return jsonify({"error": "File not found."}), 404
     return send_from_directory(PROJECT_DIR, filename)
 

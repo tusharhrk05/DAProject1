@@ -42,6 +42,7 @@ The dashboard's BahiPro assistant uses local rules and SQL queries; it does not 
 ## Features
 
 - First-run guided tour through Overview, Billing, Purchases, Inventory, Customers, Reports, Settings, and search/alerts; reopen it from **Help**
+- Demo dataset import with 150 sales, 35 purchase invoices, 25 products, 18 customers, split payments, and outstanding balances
 - Sales overview, pending balances, customer lifetime spend, and lifetime payment due
 - Searchable billing with multiple products and paid, partial, or pending payment
 - Invoice preview, print, WhatsApp share, and PDF sharing
